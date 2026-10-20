@@ -79,7 +79,7 @@ struct DashboardView: View {
                     MetricRow(label: "Núcleos", value: "\(monitor.hardware.cores)")
                     MetricRow(
                         label: "Carga média",
-                        value: monitor.loadAverage.map { String(format: "%.2f", $0) }.joined(separator: " · ")
+                        value: monitor.loadAverage.map { String(format: "%.1f", $0) }.joined(separator: " · ")
                     )
                 }
             }

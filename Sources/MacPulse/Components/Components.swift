@@ -97,7 +97,7 @@ struct RingGauge: View {
                 Text(Fmt.percent(clamped))
                     .font(.system(size: 22, weight: .semibold, design: .rounded))
                     .monospacedDigit()
-                    .contentTransition(.numericText())
+                    .contentTransition(DemoMode.isEnabled ? .identity : .numericText())
                 Text(caption)
                     .font(.caption)
                     .foregroundStyle(.secondary)

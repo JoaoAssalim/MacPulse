@@ -1,0 +1,38 @@
+COMO ABRIR O MACPULSE
+=====================
+
+O MacPulse ainda não é notarizado pela Apple. Por isso, na primeira vez que
+você abre o app, o macOS pode dizer que ele "está danificado" ou que "a Apple
+não pôde verificá-lo". O app não está danificado: é só um bloqueio que o
+macOS aplica a apps baixados da internet.
+
+Faça isto uma única vez:
+
+  1. Arraste o MacPulse para a pasta Aplicativos.
+
+  2. Abra o Terminal (Aplicativos › Utilitários › Terminal), cole o comando
+     abaixo e aperte Enter:
+
+       xattr -dr com.apple.quarantine /Applications/MacPulse.app
+
+  3. Abra o MacPulse normalmente. Pronto, não vai pedir de novo.
+
+Requisitos: macOS 14 Sonoma ou mais recente. Funciona em Macs Apple Silicon
+(M1, M2, M3, M4) e Intel.
+
+
+HOW TO OPEN MACPULSE
+====================
+
+MacPulse is not notarized by Apple yet, so the first time you open it macOS
+may say it "is damaged" or that "Apple could not verify" it. It is not
+damaged: macOS applies this block to apps downloaded from the internet.
+
+Do this once:
+
+  1. Drag MacPulse into your Applications folder.
+  2. Open Terminal, paste the command below and press Return:
+
+       xattr -dr com.apple.quarantine /Applications/MacPulse.app
+
+  3. Open MacPulse as usual. It will not ask again.

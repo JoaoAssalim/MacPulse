@@ -111,7 +111,9 @@ struct HardwareInfo {
             cores: ProcessInfo.processInfo.activeProcessorCount,
             memory: ProcessInfo.processInfo.physicalMemory,
             osVersion: "macOS \(version.majorVersion).\(version.minorVersion).\(version.patchVersion)",
-            hostName: Host.current().localizedName ?? ProcessInfo.processInfo.hostName
+            hostName: DemoMode.isEnabled
+                ? DemoMode.hostName
+                : Host.current().localizedName ?? ProcessInfo.processInfo.hostName
         )
     }()
 }

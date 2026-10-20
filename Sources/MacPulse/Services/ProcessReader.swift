@@ -21,7 +21,7 @@ struct ProcessItem: Identifiable, Hashable {
         return String(path[..<range.lowerBound]) + ".app"
     }
 
-    var isOwnedByCurrentUser: Bool { user == NSUserName() }
+    var isOwnedByCurrentUser: Bool { user == NSUserName() || (DemoMode.isEnabled && user == DemoMode.userName) }
 }
 
 enum ProcessReader {
@@ -46,7 +46,7 @@ enum ProcessReader {
         return ProcessItem(
             pid: pid,
             ppid: ppid,
-            user: String(fields[2]),
+            user: DemoMode.isEnabled && fields[2] == NSUserName() ? DemoMode.userName : String(fields[2]),
             cpu: Double(fields[3]) ?? 0,
             memoryPercent: Double(fields[4]) ?? 0,
             memoryBytes: rssKB * 1024,
